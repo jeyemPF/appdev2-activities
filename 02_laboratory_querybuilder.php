@@ -2,31 +2,36 @@
 <!-- SQL syntax -->
 SELECT * FROM students;
 <!-- Query Builder -->
-$students = DB::table('students')->get();
+ $students = DB::table('students')->get();
+ return response()->json(['students' => $students]);
 
 #Task#2
 <!-- SQL syntax -->
 SELECT * FROM students WHERE grade = '10';
 <!-- Query Builder -->
 $students = DB::table('students')->where('grade', 10)->get();
+return response()->json(['students' => $students]);
 
 #Task#3
 <!-- SQL syntax -->
 SELECT * FROM students WHERE age BETWEEN 15 AND 18;
 <!-- Query Builder -->
 $students = DB::table('students')->whereBetween('age', [15, 18])->get();
+return response()->json(['students' => $students]);
 
 #Task#4
 <!-- SQL syntax -->
 SELECT * FROM students WHERE city = 'Manila';
 <!-- Query Builder -->
 $students = DB::table('students')->where('city', 'Manila')->get();
+return response()->json(['students' => $students]);
 
 #Task#5
 <!-- SQL syntax -->
 SELECT * FROM students ORDER BY age DESC;
 <!-- Query Builder -->
 $students = DB::table('students')->orderByDesc('age')->get();
+return response()->json(['students' => $students]);
 
 #Task#6
 <!-- SQL syntax -->
